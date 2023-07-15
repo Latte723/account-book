@@ -2,7 +2,7 @@
 const client = useSupabaseAuthClient();
 async function signOut() {
   await client.auth.signOut();
-  await navigateTo("/login");
+  await navigateTo('/login');
 }
 </script>
 

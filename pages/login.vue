@@ -3,8 +3,8 @@ const user = useSupabaseUser();
 const client = useSupabaseAuthClient();
 const router = useRouter();
 
-const email = ref("");
-const password = ref("");
+const email = ref('');
+const password = ref('');
 
 // Login method using providers
 const login = async () => {
@@ -14,10 +14,10 @@ const login = async () => {
   });
 
   if (error) {
-    return alert("Something went wrong !");
+    return alert('Something went wrong !');
   }
 
-  router.push("/dashboard");
+  router.push('/dashboard');
 };
 </script>
 
