@@ -1,25 +1,23 @@
 <script setup lang="ts">
-import type { Provider } from '@supabase/gotrue-js';
-
 const user = useSupabaseUser();
 const client = useSupabaseAuthClient();
 const router = useRouter();
 
-const email = ref('');
-const password = ref('');
+const email = ref("");
+const password = ref("");
 
 // Login method using providers
-const login = async (provider: Provider) => {
+const login = async () => {
   const { data, error } = await client.auth.signUp({
     email: email.value,
     password: password.value,
   });
 
   if (error) {
-    return alert('Something went wrong !');
+    return alert("Something went wrong !");
   }
 
-  router.push('/dashboard');
+  router.push("/dashboard");
 };
 </script>
 
@@ -32,7 +30,7 @@ const login = async (provider: Provider) => {
     <label :class="$style.label">password</label>
     <input type="password" v-model="password" />
   </div>
-  <button @click="login('github')">Login with GitHub</button>
+  <button @click="login()">Login</button>
 </template>
 
 <style module>
