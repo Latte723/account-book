@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const user = useSupabaseUser();
-const client = useSupabaseAuthClient();
+const supabase = useSupabaseClient();
 const router = useRouter();
 
 const email = ref('');
@@ -8,10 +8,7 @@ const password = ref('');
 
 // Login method using providers
 const login = async () => {
-  const { data, error } = await client.auth.signUp({
-    email: email.value,
-    password: password.value,
-  });
+  const { error } = await supabase.auth.signInWithOtp({ email: email.value });
 
   if (error) {
     return alert('Something went wrong !');
@@ -22,15 +19,12 @@ const login = async () => {
 </script>
 
 <template>
-  <div>
-    <label :class="$style.label">email</label>
-    <input type="email" v-model="email" />
-  </div>
-  <div>
-    <label :class="$style.label">password</label>
-    <input type="password" v-model="password" />
-  </div>
-  <button @click="login()">Login</button>
+  <VSheet>
+    <VForm>
+      <VTextField v-model="email" type="email" label="email"></VTextField>
+      <VBtn @click="login()">Login</VBtn>
+    </VForm>
+  </VSheet>
 </template>
 
 <style module>
