@@ -118,3 +118,15 @@ export type UseCase = {
   id: number;
   name: string;
 };
+
+export type MedicalExpensesDeduction = {
+  id: number;
+  person: number;
+  name_of_hospital_and_pharmacy: string;
+  medical_care_and_treatment: boolean;
+  pharmaceutical_purchasing: boolean;
+  other_medical_expenses: boolean;
+  amount: number;
+  amount_to_be_covered: number;
+  payment_date: string;
+};

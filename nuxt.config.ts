@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/supabase', '@invictus.codes/nuxt-vuetify'],
+  modules: ['@invictus.codes/nuxt-vuetify', '@nuxtjs/supabase', '@pinia/nuxt'],
   typescript: {
     strict: true,
   },
+  pinia: {},
   supabase: {},
   vuetify: {
     vuetifyOptions: {},

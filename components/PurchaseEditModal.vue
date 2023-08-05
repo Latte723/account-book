@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SelectItems } from 'types/utils';
 import { VSelect } from 'vuetify/lib/components/index.mjs';
 import type {
   BillingMethod,
@@ -40,11 +41,6 @@ watch(
   },
   { immediate: true },
 );
-
-type SelectItems<Value> = {
-  title: string;
-  value: Value;
-}[];
 
 const usecaseItems = computed<SelectItems<PurchaseHistory['usecase']>>(() =>
   props.usecases.map((usecase) => ({ title: usecase.name, value: usecase.id })),

@@ -14,6 +14,7 @@ import type {
   StockHistory,
   StockTradeType,
   UseCase,
+  MedicalExpensesDeduction,
 } from './model';
 import type { FunctionsClient } from '@supabase/functions-js';
 import type {
@@ -42,6 +43,7 @@ type Tables = {
   };
   t_additional_income: {
     Row: AdditionalIncome;
+    Insert: Partial<AdditionalIncome>;
   };
   m_bank_account: {
     Row: BankAccount;
@@ -51,18 +53,21 @@ type Tables = {
   };
   t_budget: {
     Row: Budget;
+    Insert: Partial<Budget>;
   };
   m_budget_type: {
     Row: BudgetType;
   };
   t_deposit_history: {
     Row: DepositHistory;
+    Insert: Partial<DepositHistory>;
   };
   m_deposit_type: {
     Row: DepositType;
   };
   t_monthly_income: {
     Row: MonthlyIncome;
+    Insert: Partial<MonthlyIncome>;
   };
   t_pastime: {
     Row: Pastime;
@@ -76,12 +81,17 @@ type Tables = {
   };
   t_stock_hinstory: {
     Row: StockHistory;
+    Insert: Partial<StockHistory>;
   };
   m_stock_trade_type: {
     Row: StockTradeType;
   };
   m_usecase: {
     Row: UseCase;
+  };
+  t_medical_expenses_deduction: {
+    Row: MedicalExpensesDeduction;
+    Insert: Partial<MedicalExpensesDeduction>;
   };
 };
 

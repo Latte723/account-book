@@ -16,8 +16,8 @@ async function signOut() {
             @click="navigateTo('/purchases')"
           ></v-list-item>
           <v-list-item
-            prepend-icon="mdi-account-box"
-            title="Account"
+            title="娯楽"
+            @click="navigateTo('/pastime')"
           ></v-list-item>
           <v-list-item prepend-icon="mdi-gavel" title="Admin"></v-list-item>
         </v-list>
@@ -28,7 +28,7 @@ async function signOut() {
           </div>
         </template>
       </v-navigation-drawer>
-      <v-main style="height: 400px">
+      <v-main style="height: 100vh">
         <slot></slot>
       </v-main>
     </v-layout>
